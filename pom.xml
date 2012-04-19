@@ -6,4 +6,10 @@
     <version>1.7.1</version>
     <artifactId>jquery</artifactId>
     <packaging>jar</packaging>
+    <distributionManagement>
+        <repository>
+            <id>webjars.github.com</id>
+        <url>file:///${basedir}/../webjars.github.com/m2/</url>
+      </repository>
+    </distributionManagement>
 </project>
