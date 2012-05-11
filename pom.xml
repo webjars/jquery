@@ -9,7 +9,7 @@
     <distributionManagement>
         <repository>
             <id>webjars.github.com</id>
-        <url>file:///${basedir}/../webjars.github.com/m2/</url>
-      </repository>
+            <url>file:///${basedir}/../webjars.github.com/m2/</url>
+        </repository>
     </distributionManagement>
 </project>
