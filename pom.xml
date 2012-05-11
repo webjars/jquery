@@ -12,4 +12,7 @@
             <url>file:///${basedir}/../webjars.github.com/m2/</url>
         </repository>
     </distributionManagement>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 </project>
