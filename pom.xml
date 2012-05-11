@@ -4,7 +4,7 @@
     <groupId>com.jquery</groupId>
     <artifactId>jquery</artifactId>
     <name>jquery</name>
-    <version>1.7.1</version>
+    <version>1.7.2</version>
     <packaging>jar</packaging>
     <distributionManagement>
         <repository>
@@ -14,7 +14,7 @@
     </distributionManagement>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jquery.version>1.7.1</jquery.version>
+        <jquery.version>1.7.2</jquery.version>
         <jquery.sourceUrl>http://code.jquery.com/</jquery.sourceUrl>
         <destDir>${project.build.directory}/classes/public/javascripts</destDir>
     </properties>
