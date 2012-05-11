@@ -9,7 +9,44 @@
     <distributionManagement>
         <repository>
             <id>webjars.github.com</id>
-        <url>file:///${basedir}/../webjars.github.com/m2/</url>
-      </repository>
+            <url>file:///${basedir}/../webjars.github.com/m2/</url>
+        </repository>
     </distributionManagement>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jquery.version>1.7.1</jquery.version>
+        <jquery.sourceUrl>http://code.jquery.com/</jquery.sourceUrl>
+        <destDir>${project.build.directory}/classes/public/javascripts</destDir>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>wagon-maven-plugin</artifactId>
+                <version>1.0-beta-4</version>
+                <executions>
+                    <execution>
+                        <id>download-full-js</id>
+                        <phase>process-resources</phase>
+                        <goals><goal>download-single</goal></goals>
+                        <configuration>
+                            <url>${jquery.sourceUrl}</url>
+                            <fromFile>jquery-${jquery.version}.js</fromFile>
+                            <toFile>${destDir}/jquery.js</toFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>download-min-js</id>
+                        <phase>process-resources</phase>
+                        <goals><goal>download-single</goal></goals>
+                        <configuration>
+                            <url>${jquery.sourceUrl}</url>
+                            <fromFile>jquery-${jquery.version}.min.js</fromFile>
+                            <toFile>${destDir}/jquery.min.js</toFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
