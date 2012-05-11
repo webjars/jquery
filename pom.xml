@@ -15,6 +15,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jquery.version>1.7.1</jquery.version>
+        <jquery.sourceUrl>http://code.jquery.com/</jquery.sourceUrl>
+        <destDir>${project.build.directory}/classes/public/javascripts</destDir>
     </properties>
     <build>
         <plugins>
@@ -22,18 +24,15 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>wagon-maven-plugin</artifactId>
                 <version>1.0-beta-4</version>
-                <configuration>
-                    <url>http://code.jquery.com/</url>
-                    <toDir>${project.build.directory}/classes/public/javascripts</toDir>
-                </configuration>
                 <executions>
                     <execution>
                         <id>download-full-js</id>
                         <phase>process-resources</phase>
                         <goals><goal>download-single</goal></goals>
                         <configuration>
+                            <url>${jquery.sourceUrl}</url>
                             <fromFile>jquery-${jquery.version}.js</fromFile>
-                            <toFile>jquery.js</toFile>
+                            <toFile>${destDir}/jquery.js</toFile>
                         </configuration>
                     </execution>
                     <execution>
@@ -41,8 +40,9 @@
                         <phase>process-resources</phase>
                         <goals><goal>download-single</goal></goals>
                         <configuration>
+                            <url>${jquery.sourceUrl}</url>
                             <fromFile>jquery-${jquery.version}.min.js</fromFile>
-                            <toFile>jquery.min.js</toFile>
+                            <toFile>${destDir}/jquery.min.js</toFile>
                         </configuration>
                     </execution>
                 </executions>
