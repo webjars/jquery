@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.jquery</groupId>
+    <groupId>com.webjars</groupId>
     <artifactId>jquery</artifactId>
     <name>jquery</name>
-    <version>1.7.2-1</version>
+    <version>1.8.1</version>
     <packaging>jar</packaging>
     <distributionManagement>
         <repository>
@@ -14,9 +14,8 @@
     </distributionManagement>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jquery.version>1.7.2</jquery.version>
-        <jquery.sourceUrl>http://code.jquery.com/</jquery.sourceUrl>
-        <destDir>${project.build.directory}/classes/public</destDir>
+        <downloadUrl>https://ajax.googleapis.com/ajax/libs/jquery/${project.version}</downloadUrl>
+        <destinationDir>${project.build.directory}/classes/META-INF/resources/${project.artifactId}/${project.version}</destinationDir>
     </properties>
     <build>
         <plugins>
@@ -26,13 +25,13 @@
                 <version>1.0-beta-4</version>
                 <executions>
                     <execution>
-                        <id>download-full-js</id>
+                        <id>download-js</id>
                         <phase>process-resources</phase>
                         <goals><goal>download-single</goal></goals>
                         <configuration>
-                            <url>${jquery.sourceUrl}</url>
-                            <fromFile>jquery-${jquery.version}.js</fromFile>
-                            <toFile>${destDir}/jquery.js</toFile>
+                            <url>${downloadUrl}</url>
+                            <fromFile>jquery.js</fromFile>
+                            <toDir>${destinationDir}</toDir>
                         </configuration>
                     </execution>
                     <execution>
@@ -40,9 +39,9 @@
                         <phase>process-resources</phase>
                         <goals><goal>download-single</goal></goals>
                         <configuration>
-                            <url>${jquery.sourceUrl}</url>
-                            <fromFile>jquery-${jquery.version}.min.js</fromFile>
-                            <toFile>${destDir}/jquery.min.js</toFile>
+                            <url>${downloadUrl}</url>
+                            <fromFile>jquery.min.js</fromFile>
+                            <toDir>${destinationDir}</toDir>
                         </configuration>
                     </execution>
                 </executions>

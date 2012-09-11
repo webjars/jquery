@@ -1,9 +1,20 @@
-jQuery JAR
+jQuery WebJar
+
+Current GroupId:
+com.webjars
+
+Current ArtifactId:
+jquery
 
 Current Version:
-1.7.2-1
+1.8.1
+
+Current Layout:
+META-INF/resources/jquery/1.8.1/jquery.min.js
+META-INF/resources/jquery/1.8.1/jquery.js
 
 Previous Versions:
+1.7.2-1
 1.7.2
 1.7.1
 1.5.1
