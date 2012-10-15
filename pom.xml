@@ -12,7 +12,7 @@
     <artifactId>jquery</artifactId>
     <packaging>jar</packaging>
     <name>jquery</name>
-    <version>1.8.2-SNAPSHOT</version>
+    <version>1.8.2</version>
     <description>WebJar for jQuery</description>
     <url>http://webjars.org</url>
 
@@ -28,7 +28,7 @@
         <url>http://github.com/webjars/jquery</url>
         <connection>scm:git:https://github.com/webjars/jquery.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/jquery.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>jquery-1.8.2</tag>
     </scm>
 
     <developers>
