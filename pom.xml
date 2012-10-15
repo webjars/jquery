@@ -1,22 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
     <groupId>org.webjars</groupId>
     <artifactId>jquery</artifactId>
-    <name>jquery</name>
-    <version>1.8.2</version>
     <packaging>jar</packaging>
-    <distributionManagement>
-        <repository>
-            <id>webjars.github.com</id>
-            <url>file:///${basedir}/../webjars.github.com/m2/</url>
-        </repository>
-    </distributionManagement>
+    <name>jquery</name>
+    <version>1.8.2-SNAPSHOT</version>
+    <description>WebJar for jQuery</description>
+    <url>http://webjars.org</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>http://github.com/webjars/jquery</url>
+        <connection>scm:git:https://github.com/webjars/jquery.git</connection>
+        <developerConnection>scm:git:https://github.com/webjars/jquery.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>jamesward</id>
+            <name>James Ward</name>
+            <email>james@jamesward.org</email>
+        </developer>
+    </developers>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <downloadUrl>https://ajax.googleapis.com/ajax/libs/jquery/${project.version}</downloadUrl>
         <destinationDir>${project.build.directory}/classes/META-INF/resources/webjars/${project.artifactId}/${project.version}</destinationDir>
     </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -48,4 +76,35 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>release-sign-artifacts</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.2</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 </project>
