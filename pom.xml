@@ -12,7 +12,7 @@
     <artifactId>jquery</artifactId>
     <packaging>jar</packaging>
     <name>jquery</name>
-    <version>1.8.1-SNAPSHOT</version>
+    <version>1.8.2-SNAPSHOT</version>
     <description>WebJar for jQuery</description>
     <url>http://webjars.org</url>
 
@@ -41,8 +41,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <downloadUrl>https://ajax.googleapis.com/ajax/libs/jquery/${project.version}</downloadUrl>
-        <destinationDir>${project.build.directory}/classes/META-INF/resources/webjars/${project.artifactId}/${project.version}</destinationDir>
+        <jquery.version>1.8.2</jquery.version>
+        <downloadUrl>https://ajax.googleapis.com/ajax/libs/jquery/${jquery.version}</downloadUrl>
+        <destinationDir>${project.build.directory}/classes/META-INF/resources/webjars/${project.artifactId}/${jquery.version}</destinationDir>
     </properties>
 
     <build>
