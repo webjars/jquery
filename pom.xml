@@ -12,7 +12,7 @@
     <artifactId>jquery</artifactId>
     <packaging>jar</packaging>
     <name>jquery</name>
-    <version>1.8.2-SNAPSHOT</version>
+    <version>1.8.2</version>
     <description>WebJar for jQuery</description>
     <url>http://webjars.org</url>
 
