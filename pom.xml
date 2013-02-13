@@ -41,7 +41,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jquery.version>1.9.0</jquery.version>
+        <jquery.version>1.9.1</jquery.version>
         <downloadUrl>https://ajax.googleapis.com/ajax/libs/jquery/${jquery.version}</downloadUrl>
         <destinationDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${jquery.version}</destinationDir>
     </properties>
@@ -78,7 +78,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>2.4</version>
             </plugin>
         </plugins>
     </build>
