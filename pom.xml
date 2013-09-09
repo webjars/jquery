@@ -73,6 +73,16 @@
                             <toFile>${destinationDir}/jquery.min.js</toFile>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>download-source-map</id>
+                        <phase>process-resources</phase>
+                        <goals><goal>download-single</goal></goals>
+                        <configuration>
+                            <url>${downloadUrl}</url>
+                            <fromFile>jquery-${jquery.version}.min.map</fromFile>
+                            <toFile>${destinationDir}/jquery-${jquery.version}.min.map</toFile>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
