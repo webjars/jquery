@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>jquery</artifactId>
-    <version>1.10.3-SNAPSHOT</version>
+    <version>1.10.2-1-SNAPSHOT</version>
     <name>jquery</name>
     <description>WebJar for jQuery</description>
     <url>http://webjars.org</url>
@@ -80,7 +80,7 @@
                         <configuration>
                             <url>${downloadUrl}</url>
                             <fromFile>jquery-${jquery.version}.min.map</fromFile>
-                            <toFile>${destinationDir}/jquery-${jquery.version}.min.map</toFile>
+                            <toDir>${destinationDir}</toDir>
                         </configuration>
                     </execution>
                 </executions>
