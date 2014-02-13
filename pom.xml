@@ -161,6 +161,12 @@
                 <version>2.4</version>
             </extension>
         </extensions>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <targetPath>${destinationDir}</targetPath>
+            </resource>
+        </resources>
     </build>
 
 </project>
