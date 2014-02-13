@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>jquery</artifactId>
-    <version>1.11.0</version>
+    <version>1.11.0-1-SNAPSHOT</version>
     <name>jquery</name>
     <description>WebJar for jQuery</description>
     <url>http://webjars.org</url>
@@ -28,7 +28,7 @@
         <url>http://github.com/webjars/jquery</url>
         <connection>scm:git:https://github.com/webjars/jquery.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/jquery.git</developerConnection>
-        <tag>jquery-1.11.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <developers>
@@ -130,14 +130,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.4.2</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.scm</groupId>
-                        <artifactId>maven-scm-provider-gitexe</artifactId>
-                        <version>1.9</version>
-                    </dependency>
-                </dependencies>
+                <version>2.5</version>
             </plugin>
 
             <plugin>
@@ -161,6 +154,12 @@
                 <version>2.4</version>
             </extension>
         </extensions>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <targetPath>${destinationDir}</targetPath>
+            </resource>
+        </resources>
     </build>
 
 </project>
