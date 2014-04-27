@@ -44,6 +44,16 @@
         <jquery.version>2.1.0</jquery.version>
         <downloadUrl>http://code.jquery.com</downloadUrl>
         <destinationDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${jquery.version}</destinationDir>
+        <requirejs>
+            {
+                "paths": {
+                    "jquery": "jquery"
+                },
+                "shim": {
+                    "jquery": { "exports": "$" }
+                }
+            }
+        </requirejs>
     </properties>
 
     <build>
