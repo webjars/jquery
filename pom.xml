@@ -41,7 +41,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jquery.version>2.2.0</jquery.version>
+        <jquery.version>2.2.1</jquery.version>
         <downloadUrl>http://code.jquery.com</downloadUrl>
         <destinationDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${jquery.version}</destinationDir>
         <requirejs>
