@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>jquery</artifactId>
-    <version>3.1.2-SNAPSHOT</version>
+    <version>3.1.1-1-SNAPSHOT</version>
     <name>jquery</name>
     <description>WebJar for jQuery</description>
     <url>http://webjars.org</url>
@@ -42,7 +42,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <downloadUrl>http://code.jquery.com</downloadUrl>
-        <destinationDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${version.unsnapshot}</destinationDir>
+        <destinationDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destinationDir>
         <requirejs>
             {
                 "paths": {
@@ -60,7 +60,7 @@
             <plugin>
                 <groupId>com.jamesward</groupId>
                 <artifactId>unsnapshot-maven-plugin</artifactId>
-                <version>0.1</version>
+                <version>0.2</version>
                 <executions>
                     <execution>
                         <phase>initialize</phase>
@@ -82,7 +82,7 @@
                         <goals><goal>download-single</goal></goals>
                         <configuration>
                             <url>${downloadUrl}</url>
-                            <fromFile>jquery-${version.unsnapshot}.js</fromFile>
+                            <fromFile>jquery-${version.unrevise}.js</fromFile>
                             <toFile>${destinationDir}/jquery.js</toFile>
                         </configuration>
                     </execution>
@@ -92,7 +92,7 @@
                         <goals><goal>download-single</goal></goals>
                         <configuration>
                             <url>${downloadUrl}</url>
-                            <fromFile>jquery-${version.unsnapshot}.min.js</fromFile>
+                            <fromFile>jquery-${version.unrevise}.min.js</fromFile>
                             <toFile>${destinationDir}/jquery.min.js</toFile>
                         </configuration>
                     </execution>
@@ -102,7 +102,7 @@
                         <goals><goal>download-single</goal></goals>
                         <configuration>
                             <url>${downloadUrl}</url>
-                            <fromFile>jquery-${version.unsnapshot}.min.map</fromFile>
+                            <fromFile>jquery-${version.unrevise}.min.map</fromFile>
                             <toFile>${destinationDir}/jquery.min.map</toFile>
                         </configuration>
                     </execution>
@@ -126,7 +126,7 @@
                    <file>${destinationDir}/jquery.min.map</file>
                    <replacements>
                        <replacement>
-                           <token>-${version.unsnapshot}</token>
+                           <token>-${version.unrevise}</token>
                            <value />
                        </replacement>         
                    </replacements>
