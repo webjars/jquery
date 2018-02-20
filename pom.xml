@@ -41,7 +41,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <downloadUrl>http://code.jquery.com</downloadUrl>
+        <downloadUrl>https://cdnjs.cloudflare.com/ajax/libs/jquery/${version.unsnapshot}</downloadUrl>
         <destinationDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destinationDir>
         <requirejs>
             {
@@ -82,7 +82,7 @@
                         <goals><goal>download-single</goal></goals>
                         <configuration>
                             <url>${downloadUrl}</url>
-                            <fromFile>jquery-${version.unrevise}.js</fromFile>
+                            <fromFile>jquery.js</fromFile>
                             <toFile>${destinationDir}/jquery.js</toFile>
                         </configuration>
                     </execution>
@@ -92,7 +92,7 @@
                         <goals><goal>download-single</goal></goals>
                         <configuration>
                             <url>${downloadUrl}</url>
-                            <fromFile>jquery-${version.unrevise}.min.js</fromFile>
+                            <fromFile>jquery.min.js</fromFile>
                             <toFile>${destinationDir}/jquery.min.js</toFile>
                         </configuration>
                     </execution>
@@ -102,49 +102,8 @@
                         <goals><goal>download-single</goal></goals>
                         <configuration>
                             <url>${downloadUrl}</url>
-                            <fromFile>jquery-${version.unrevise}.min.map</fromFile>
+                            <fromFile>jquery.min.map</fromFile>
                             <toFile>${destinationDir}/jquery.min.map</toFile>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!-- remove the versions from the map file -->
-            <plugin>
-               <groupId>com.google.code.maven-replacer-plugin</groupId>
-               <artifactId>replacer</artifactId>
-               <version>1.5.2</version>
-               <executions>
-                   <execution>
-                       <phase>prepare-package</phase>
-                       <goals>
-                           <goal>replace</goal>
-                       </goals>                   
-                   </execution>
-               </executions>
-               <configuration>
-                   <file>${destinationDir}/jquery.min.map</file>
-                   <replacements>
-                       <replacement>
-                           <token>-${version.unrevise}</token>
-                           <value />
-                       </replacement>         
-                   </replacements>
-               </configuration>
-           </plugin>
-
-           <!-- add the source map back to the minified file -->
-           <plugin>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.7</version>
-                <executions>
-                    <execution>
-                        <phase>prepare-package</phase>
-                        <goals><goal>run</goal></goals>
-                        <configuration>
-                            <target>
-                                <concat append="true" destfile="${destinationDir}/jquery.min.js">//# sourceMappingURL=jquery.min.map</concat>
-                            </target>
                         </configuration>
                     </execution>
                 </executions>
@@ -153,13 +112,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.1</version>
+                <version>2.5.3</version>
             </plugin>
 
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.5</version>
+                <version>1.6.8</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>sonatype-nexus-staging</serverId>
