@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>jquery</artifactId>
-    <version>3.3.1-SNAPSHOT</version>
+    <version>3.3.1-1-SNAPSHOT</version>
     <name>jquery</name>
     <description>WebJar for jQuery</description>
     <url>http://webjars.org</url>
@@ -41,7 +41,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <downloadUrl>https://cdnjs.cloudflare.com/ajax/libs/jquery/${version.unsnapshot}</downloadUrl>
+        <downloadUrl>https://cdnjs.cloudflare.com/ajax/libs/jquery/${version.unrevise}</downloadUrl>
         <destinationDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destinationDir>
         <requirejs>
             {
