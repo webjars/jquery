@@ -40,6 +40,7 @@
     </developers>
 
     <properties>
+		<bnd.bundle.version>3.3.1.2-SNAPSHOT</bnd.bundle.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <downloadUrl>https://cdnjs.cloudflare.com/ajax/libs/jquery/${version.unrevise}</downloadUrl>
         <destinationDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destinationDir>
@@ -108,6 +109,46 @@
                     </execution>
                 </executions>
             </plugin>
+			
+			<plugin>
+				<groupId>biz.aQute.bnd</groupId>
+				<artifactId>bnd-maven-plugin</artifactId>
+				<configuration>
+					<bnd>
+					<![CDATA[
+						Bundle-SymbolicName: ${project.groupId}.${project.artifactId}
+						Bundle-Version:	 ${bnd.bundle.version}
+						Bundle-Description: ${project.description}
+						-resourceonly:true
+						WebJars-Resource:\
+							/META-INF/resources/webjars/${project.artifactId}/${project.version},\
+							/webjars-requirejs.js
+						Provide-Capability: ${project.groupId};${project.artifactId}:List<String>=${project.version}
+					]]>
+					</bnd>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>bnd-process</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<!-- Required to make the maven-jar-plugin pick up the bnd --> 
+            <!-- generated manifest. Also avoid packaging empty Jars -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<archive>
+						<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+					</archive>
+					<skipIfEmpty>true</skipIfEmpty>
+				</configuration>
+			</plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
