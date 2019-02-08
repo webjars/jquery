@@ -46,10 +46,12 @@
         <requirejs>
             {
                 "paths": {
-                    "jquery": "jquery"
+                    "jquery": "jquery",
+                    "jquery-slim": "jquery.slim"
                 },
                 "shim": {
-                    "jquery": { "exports": "$" }
+                    "jquery": { "exports": "$" },
+                    "jquery-slim": { "exports": "$" }
                 }
             }
         </requirejs>
@@ -104,6 +106,36 @@
                             <url>${downloadUrl}</url>
                             <fromFile>jquery.min.map</fromFile>
                             <toFile>${destinationDir}/jquery.min.map</toFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>download-slim-js</id>
+                        <phase>process-resources</phase>
+                        <goals><goal>download-single</goal></goals>
+                        <configuration>
+                            <url>${downloadUrl}</url>
+                            <fromFile>jquery.slim.js</fromFile>
+                            <toFile>${destinationDir}/jquery.slim.js</toFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>download-slim-min-js</id>
+                        <phase>process-resources</phase>
+                        <goals><goal>download-single</goal></goals>
+                        <configuration>
+                            <url>${downloadUrl}</url>
+                            <fromFile>jquery.slim.min.js</fromFile>
+                            <toFile>${destinationDir}/jquery.slim.min.js</toFile>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>download-slim-source-map</id>
+                        <phase>process-resources</phase>
+                        <goals><goal>download-single</goal></goals>
+                        <configuration>
+                            <url>${downloadUrl}</url>
+                            <fromFile>jquery.slim.min.map</fromFile>
+                            <toFile>${destinationDir}/jquery.slim.min.map</toFile>
                         </configuration>
                     </execution>
                 </executions>
