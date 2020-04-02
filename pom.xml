@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>jquery</artifactId>
-    <version>1.11.0-2-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>jquery</name>
     <description>WebJar for jQuery</description>
     <url>http://webjars.org</url>
@@ -41,9 +41,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jquery.version>1.11.0</jquery.version>
+        <jquery.version>1.0</jquery.version>
         <downloadUrl>http://code.jquery.com</downloadUrl>
-        <destinationDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${jquery.version}</destinationDir>
+        <destinationDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destinationDir>
     </properties>
 
     <build>
@@ -64,64 +64,13 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>download-min-js</id>
+                        <id>download-pack-js</id>
                         <phase>process-resources</phase>
                         <goals><goal>download-single</goal></goals>
                         <configuration>
                             <url>${downloadUrl}</url>
-                            <fromFile>jquery-${jquery.version}.min.js</fromFile>
-                            <toFile>${destinationDir}/jquery.min.js</toFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>download-source-map</id>
-                        <phase>process-resources</phase>
-                        <goals><goal>download-single</goal></goals>
-                        <configuration>
-                            <url>${downloadUrl}</url>
-                            <fromFile>jquery-${jquery.version}.min.map</fromFile>
-                            <toFile>${destinationDir}/jquery.min.map</toFile>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!-- remove the versions from the map file -->
-            <plugin>
-               <groupId>com.google.code.maven-replacer-plugin</groupId>
-               <artifactId>replacer</artifactId>
-               <version>1.5.2</version>
-               <executions>
-                   <execution>
-                       <phase>prepare-package</phase>
-                       <goals>
-                           <goal>replace</goal>
-                       </goals>                   
-                   </execution>
-               </executions>
-               <configuration>
-                   <file>${destinationDir}/jquery.min.map</file>
-                   <replacements>
-                       <replacement>
-                           <token>-${jquery.version}</token>
-                           <value />
-                       </replacement>         
-                   </replacements>
-               </configuration>
-           </plugin>
-
-           <!-- add the source map back to the minified file -->
-           <plugin>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.7</version>
-                <executions>
-                    <execution>
-                        <phase>prepare-package</phase>
-                        <goals><goal>run</goal></goals>
-                        <configuration>
-                            <target>
-                                <concat append="true" destfile="${destinationDir}/jquery.min.js">//# sourceMappingURL=jquery.min.map</concat>
-                            </target>
+                            <fromFile>jquery-${jquery.version}.pack.js</fromFile>
+                            <toFile>${destinationDir}/jquery.pack.js</toFile>
                         </configuration>
                     </execution>
                 </executions>
