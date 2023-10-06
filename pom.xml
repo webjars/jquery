@@ -9,7 +9,7 @@
     </parent>
 
     <packaging>jar</packaging>
-    <groupId>org.webjars</groupId>
+    <groupId>com.sonatype.central.testing.james-ward</groupId>
     <artifactId>jquery</artifactId>
     <version>3.7.1-3-SNAPSHOT</version>
     <name>jquery</name>
