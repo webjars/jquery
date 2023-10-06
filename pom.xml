@@ -160,7 +160,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>sonatype-nexus-staging</serverId>
-                    <nexusUrl>https://central.sonatype.org/</nexusUrl>
+                    <nexusUrl>https://central.sonatype.com/</nexusUrl>
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
