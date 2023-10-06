@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>com.sonatype.central.testing.james-ward</groupId>
     <artifactId>jquery</artifactId>
-    <version>3.7.1-4</version>
+    <version>3.7.1-5-SNAPSHOT</version>
     <name>jquery</name>
     <description>WebJar for jQuery</description>
     <url>http://webjars.org</url>
@@ -28,7 +28,7 @@
         <url>http://github.com/webjars/jquery</url>
         <connection>scm:git:https://github.com/webjars/jquery.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/jquery.git</developerConnection>
-        <tag>jquery-3.7.1-4</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <developers>
