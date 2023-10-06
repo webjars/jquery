@@ -153,16 +153,16 @@
                 <version>3.2.2</version>
             </plugin>
 
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.13</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>sonatype-nexus-staging</serverId>
-                    <nexusUrl>https://central.sonatype.com/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
+<plugin>
+  <groupId>org.sonatype.central</groupId>
+  <artifactId>central-publishing-maven-plugin</artifactId>
+  <version>0.1.2</version>
+  <extensions>true</extensions>
+  <configuration>
+    <publishingServerId>central</publishingServerId>
+    <tokenEnabled>true</tokenEnabled>
+  </configuration>
+</plugin>
             </plugin>
         </plugins>
         <extensions>
