@@ -163,7 +163,6 @@
     <tokenEnabled>true</tokenEnabled>
   </configuration>
 </plugin>
-            </plugin>
         </plugins>
         <extensions>
             <extension>
